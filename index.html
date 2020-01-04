@@ -9,15 +9,17 @@
     <!--4.4.0 is bitcoin.org version -->
     <script scr="jquery-1.11.2.min.js"></script>
     <style>
-     .theme-switch-wrapper {
+ .theme-switch-wrapper {
   display: flex;
   align-items: center;
-
-  em {
-    margin-left: 10px;
-    font-size: 1rem;
-  }
 }
+      
+.theme-switch-wrapper em { 
+    margin-left: 10px;
+    font-size: 1rem;0
+}
+      
+      
 .theme-switch {
   display: inline-block;
   height: 34px;
@@ -30,7 +32,7 @@
 }
 
 .slider {
-  background-color: #ccc;
+  background: url(moon-regular.svg);
   bottom: 0;
   cursor: pointer;
   left: 0;
@@ -69,7 +71,7 @@ input:checked + .slider:before {
      <div class="theme-switch-wrapper">
         <label class="theme-switch" for="checkbox">
             <input type="checkbox" id="checkbox" />
-            <div class="slider round"></div>
+            <div class="dark-theme-toggle"></div>
         </label>
         
       </div>
@@ -93,8 +95,9 @@ input:checked + .slider:before {
               document.documentElement.setAttribute('data-theme', 'dark');
               localStorage.setItem('theme', 'dark');
           }
-          else {        document.documentElement.setAttribute('data-theme', 'light');
-                localStorage.setItem('theme', 'light');
+          else {        
+            document.documentElement.setAttribute('data-theme', 'default');
+            localStorage.setItem('theme', 'default');
           }    
       }
 
