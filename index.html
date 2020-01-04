@@ -1,113 +1,90 @@
 <!DOCTYPE html>
 <html>
-  
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta property="og:image" content="https://bitcoin.org/img/icons/opengraph.png?1577873163" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet">
-    <!--4.4.0 is bitcoin.org version -->
-    <script scr="jquery-1.11.2.min.js"></script>
-    <style>
- .theme-switch-wrapper {
-  display: flex;
-  align-items: center;
-}
-      
-.theme-switch-wrapper em { 
-    margin-left: 10px;
-    font-size: 1rem;0
-}
-      
-      
-.theme-switch {
-  display: inline-block;
-  height: 34px;
-  position: relative;
-  width: 60px;
-}
 
-.theme-switch input {
-  display:none;
-}
-      
-.dark-theme-toggle {
-  background-image: url(moon-regular.svg);
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta property="og:image" content="https://bitcoin.org/img/icons/opengraph.png?1577873163" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet">
+  <!--4.4.0 is bitcoin.org version -->
+  <script scr="jquery-1.11.2.min.js"></script>
+  <style>
+    .dark-theme-toggle input {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      width: 30px;
       height: 30px;
-    width: 30px;
-    background-repeat: no-repeat;
-  cursor: pointer;
-      }
-      
-.slider {
-  background: url(moon-regular.svg);
-  bottom: 0;
-  cursor: pointer;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  transition: .4s;
-}
+      position: absolute;
+      top: 4px;
+      left: 4px;
+    }
+    .dark-theme-toggle::before {
+      background-image: url(moon-regular.svg);
+      height: 30px;
+      width: 30px;
+      content: "";
+      background-repeat: no-repeat;
+      cursor: pointer;
+      /*  transition: .4s;  */
+      display: block;
+    }
+    html[data-theme="dark"] .dark-theme-toggle::before {
+      background-image: url(moon-solid.svg);
+      -moz-transform: scaleX(-1);
+      /* Gecko */
+      -o-transform: scaleX(-1);
+      /* Opera */
+      -webkit-transform: scaleX(-1);
+      /* Webkit */
+      transform: scaleX(-1);
+      /* Standard */
 
-.slider:before {
-  background-color: #fff;
-  bottom: 4px;
-  content: "";
-  height: 26px;
-  left: 4px;
-  position: absolute;
-  transition: .4s;
-  width: 26px;
-}
+      filter: FlipH;
+      /* IE 6/7/8 */
+    }
 
-input:checked + .slider {
-  background-color: #66bb6a;
-}
+  </style>
+</head>
 
-input:checked + .slider:before {
-  transform: translateX(26px);
-}
+<body class="wrapper">
 
-.slider.round:before {
-  border-radius: 50%;
-}
+  <div class="dark-theme-toggle">
+    <input type="checkbox" />
 
-      </style>
-  </head>
-  <body class="wrapper">
-            <button class="dark-theme-toggle"></button>
-        
-        
-      
+  </div>
 
-    </div>
-  
+
+
+
+  </div>
+
   <script>
-      const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-      const currentTheme = localStorage.getItem('theme');
+    const toggleSwitch = document.querySelector('.dark-theme-toggle input[type="checkbox"]');
+    const currentTheme = localStorage.getItem('theme');
 
-      if (currentTheme) {
-          document.documentElement.setAttribute('data-theme', currentTheme);
+    if (currentTheme) {
+      document.documentElement.setAttribute('data-theme', currentTheme);
 
-          if (currentTheme === 'dark') {
-              toggleSwitch.checked = true;
-          }
+      if (currentTheme === 'dark') {
+        toggleSwitch.checked = true;
       }
+    }
 
-      function switchTheme(e) {
-          if (e.target.checked) {
-              document.documentElement.setAttribute('data-theme', 'dark');
-              localStorage.setItem('theme', 'dark');
-          }
-          else {        
-            document.documentElement.setAttribute('data-theme', 'default');
-            localStorage.setItem('theme', 'default');
-          }    
+    function switchTheme(e) {
+      if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
       }
+      else {
+        document.documentElement.setAttribute('data-theme', 'default');
+        localStorage.setItem('theme', 'default');
+      }
+    }
 
-      toggleSwitch.addEventListener('change', switchTheme, false);
-   </script>
-       
-  </body>
-</html>     
+    toggleSwitch.addEventListener('change', switchTheme, false);
+  </script>
+
+</body>
+
+</html>
