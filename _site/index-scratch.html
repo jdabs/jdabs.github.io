@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta property="og:image" content="https://bitcoin.org/img/icons/opengraph.png?1577873163" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet">
+  <!--4.4.0 is bitcoin.org version -->
+  <script scr="jquery-1.11.2.min.js"></script>
+  <style>
+    .dark-theme-toggle input {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      top: 4px;
+      left: 4px;
+    }
+    .dark-theme-toggle::before {
+      background-image: url(moon-regular.svg);
+      height: 30px;
+      width: 30px;
+      content: "";
+      background-repeat: no-repeat;
+      cursor: pointer;
+      /*  transition: .4s;  */
+      display: block;
+    }
+    html[data-theme="dark"] .dark-theme-toggle::before {
+      background-image: url(moon-solid.svg);
+      -moz-transform: scaleX(-1);
+      /* Gecko */
+      -o-transform: scaleX(-1);
+      /* Opera */
+      -webkit-transform: scaleX(-1);
+      /* Webkit */
+      transform: scaleX(-1);
+      /* Standard */
+
+      filter: FlipH;
+      /* IE 6/7/8 */
+    }
+
+  </style>
+</head>
+
+<body class="wrapper">
+
+  <div class="dark-theme-toggle">
+    <input type="checkbox" />
+
+  </div>
+
+
+
+
+  </div>
+
+  <script>
+    const toggleSwitch = document.querySelector('.dark-theme-toggle input[type="checkbox"]');
+    const currentTheme = localStorage.getItem('theme');
+
+    if (currentTheme) {
+      document.documentElement.setAttribute('data-theme', currentTheme);
+
+      if (currentTheme === 'dark') {
+        toggleSwitch.checked = true;
+      }
+    }
+
+    function switchTheme(e) {
+      if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+      }
+      else {
+        document.documentElement.setAttribute('data-theme', 'default');
+        localStorage.setItem('theme', 'default');
+      }
+    }
+
+    toggleSwitch.addEventListener('change', switchTheme, false);
+  </script>
+
+</body>
+
+</html>
