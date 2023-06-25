@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "How to pass the AWS Cloud Certifiction Easily"
+title:  "How to pass the AWS Cloud Certification Easily"
 author: "jdabs"
 ---
 
