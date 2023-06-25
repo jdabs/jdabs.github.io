@@ -13,3 +13,20 @@ The wallet also has a companion website, https://unisat.io, which syncs with the
 mint existing tokens, or engage in a marketplace where you can buy and sell tokens.
 
 ![Unisat Token Screen](/assets/token-screen.png)
+
+## Download and create your Unisat wallet
+
+First off you need to install the Unisat extension and set up a wallet.
+
+### 1) Use the Chrome extension download link on https://unisat.io
+Install the Extension from the Chrome extension store. The button on unisat's website takes you directly there.
+
+![Unisat website extension download button](/assets/unisat-website-download-ext.png)
+
+Note: You must be on the Chrome browser
+
+### 2) Set up the wallet
+Open the extension and select to create a new wallet. Write down the words that make up the seed phrase. You will also be asked to create a password, which you
+will always need to use when opening the wallet later.
+
+![Unisat Create Wallet](/assets/unisat-create-wallet.png)
