@@ -1,3 +1,9 @@
+---
+layout: post
+title:  "Get BRC-20 Tokens with Unisat"
+author: "jdabs"
+---
+
 ## What is BRC-20 Tokens?
 
 BRC-20 tokens are an experimental technology on the Bitcoin blockchain. It inscribes JSON data to the blockchain, which manages the state of the tokens. The JSON data
